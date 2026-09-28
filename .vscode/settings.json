@@ -1,0 +1,32 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "emeraldwalk.runonsave": {
+    "ignoreUnchangedFiles": true,
+    "commands": [
+      {
+        "match": "\\.(js|jsx|ts|tsx|html)$",
+        "cmd": "bun \"${workspaceFolder}/scripts/fix-tailwind-on-save.ts\" \"${file}\"",
+        "autoShowOutputPanel": "error"
+      }
+    ]
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "files.watcherExclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "search.exclude": {
+    "**/routeTree.gen.ts": true
+  },
+  "files.readonlyInclude": {
+    "**/routeTree.gen.ts": true
+  }
+}
